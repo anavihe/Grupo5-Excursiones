@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +14,9 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand titulo" href="#">BeProw</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand titulo" href="index.html">BeProw</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
@@ -32,10 +33,10 @@
                         <a class="nav-link" href="#">Carrito</a>
                     </li>
                     <li class="nav-item my-link mx-2">
-                        <a class="nav-link" href="#">Ayuda</a>
+                        <a class="nav-link" href="contacto.html">Ayuda</a>
                     </li>
                     <li class="nav-item my-link mx-2">
-                        <a class="nav-link" href="#">Iniciar sesión</a>
+                        <a class="nav-link" href="login.html">Iniciar sesión</a>
                     </li>
                     <li class="nav-item my-link mx-2">
                         <a class="nav-link" href="#">Registrarse</a>
@@ -50,36 +51,57 @@
 
 <!-- HOME -->
 <h3 class="titulo_datos_personales">DATOS PERSONALES</h3>
-<form class="datos_personales" th:object="${datosUsuario}" method="post">
+<form class="datos_personales">
     <div class="row">
         <div class="col-4 col-sm-4 col-md-4">
             <div class="mb-3">
                 <label for="exampleInputNombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="exampleInputNombre" aria-describedby="nombreHelp" th:field="${datosUsuario.nombre}">
+                <input type="Nombre" class="form-control" id="exampleInputNombre" aria-describedby="nombreHelp">
             </div>
         </div>
-        <div class="col-8 col-sm-8 col-md-8">
+        <div class="col-4 col-sm-4 col-md-4">
             <div class="mb-3">
                 <label for="exampleInputApellidos" class="form-label">Apellidos</label>
-                <input type="text" class="form-control" id="exampleInputApellidos" aria-describedby="apellidosHelp" th:field="${datosUsuario.apellidos}">
+                <input type="Apellidos" class="form-control" id="exampleInputApellidos"
+                       aria-describedby="apellidosHelp">
             </div>
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-4 col-sm-4 col-md-4">
+            <div class="mb-3">
+                <label for="exampleInputFecha" class="form-label">Fecha de nacimiento</label>
+                <input type="Fecha" class="form-control" id="exampleInputFecha" aria-describedby="fechaHelp"
+                       placeholder="dd/mm/yyyy">
+            </div>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4">
+            <div class="mb-3">
+                <label for="exampleInputTelefono" class="form-label">Teléfono</label>
+                <input type="Telefono" class="form-control" id="exampleInputTelefono" aria-describedby="telefonoHelp">
+            </div>
+        </div>
+    </div>
 
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" th:field="${datosUsuario.email}">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <div class="row">
+        <div class="col-4 col-sm-4 col-md-4">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label emaill">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                       placeholder="name@example.com">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+        </div>
+
+        <div class="col-4 col-sm-4 col-md-4">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" th:field="${datosUsuario.password}">
-    </div>
-    <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
+
     <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
 
@@ -89,7 +111,8 @@
     <div class="row">
         <div class="col-4 col-sm-4 col-md-4">
             <div>
-                <img src="..." alt="imagen del viaje" class="java"> <!-- poner en class = la clase del viaje que corresponda-->
+                <img src="..." alt="imagen del viaje" class="java">
+                <!-- poner en class = la clase del viaje que corresponda-->
             </div>
         </div>
 
@@ -117,16 +140,14 @@
     <div class="grupo_1 container">
         <div class="row">
             <div class="box1 col-sm-4 col-md-3">
-                <figure>
-                    <img src="../../../assets/img/logo.png" alt="logo" class="logo">
-                </figure>
+                <img src="../templates/img/logo_beprow.png" alt="logo" class="logo">
             </div>
 
             <div class="box2 col-sm-4 col-md-3">
                 <h5><b><u>SOBRE NOSOTROS</u></b></h5>
                 <p>Información corporativa</p>
                 <p>Preguntas frecuentes</p>
-                <p><a href = "contacto.html ">Atención al cliente</a></p>
+                <p><a href="contacto.html ">Atención al cliente</a></p>
                 <p>Empleo</p>
             </div>
 
