@@ -18,7 +18,11 @@
     </div>
 
     <div class="col-4 col-sm-4 col-md-4">
-        <form class="form-container1">
+        <div id="mensaje" class="alert alert-success mt-5 " role="alert">
+            Pago aceptado. ¡Muchas gracias por su compra!
+        </div>
+
+        <form action="/pasarela" class="form-container1" method="POST">
         <div class="personal-information">
             <h2>Información de pago</h2>
         </div>
@@ -31,7 +35,7 @@
         </form>
 
         <div class="d-grid gap-2">
-            <button class="btn btn-primary boton_pagar" type="button">PAGAR</button>
+            <button class="btn btn-primary boton_pagar" type="button" onclick="mensajePago()">PAGAR</button>
         </div>
 
     </div>
@@ -43,5 +47,12 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 <script src= "../templates/main.js"></script>
+
+<script>
+    function mensajePago() {
+        document.getElementById("mensaje").classList.toggle("d-none")
+    }
+
+</script>
 </body>
 </html>
