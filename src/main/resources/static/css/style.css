@@ -1,0 +1,213 @@
+
+@font-face {
+    font-family: fontwarrior;
+    src: url(warrior.otf);
+}
+
+.titulo{
+    font-family: fontwarrior, sans-serif;
+    font-size: 40px;
+}
+
+.nav-link {
+    color: black;
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+.my-link::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background-color: black;
+    display: block;
+    transition: .5s ease-in-out;
+}
+
+.my-link:hover::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    display: block;
+}
+
+.pie_pagina {
+    color: white;
+    width: 100%;
+    background-color: rgb(28, 27, 27);
+}
+
+.hr {
+    color: white;
+    margin: 0;
+}
+
+.grupo_1 {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+@media (max-width: 565px) {
+    .box1 {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.logo {
+    width: 12rem;
+    height: 9rem;
+}
+
+@media (max-width: 991px) {
+    .logo {
+        width: 6rem;
+        height: 6rem;
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 565px) {
+    .logo {
+        width: 10rem;
+        height: 8rem;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 565px) {
+    .box2 {
+        margin-top: 3rem;
+        margin-bottom: 4rem;
+    }
+}
+
+h5 {
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 767px){
+    .box4 {
+        margin-top: 4rem;
+    }
+}
+
+.red-social {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fa-instagram {
+    color: white;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-decoration:none;
+}
+
+.fa-instagram:hover {
+    background-color: rgb(95, 95, 95);
+    transition: all 0.5s;
+}
+
+.fa-linkedin {
+    color: white;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-decoration:none;
+}
+
+.fa-linkedin:hover {
+    background-color: rgb(95, 95, 95);
+    transition: all 0.5s;
+}
+
+.fa-twitter {
+    color: white;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-decoration:none;
+}
+
+.fa-twitter:hover {
+    background-color: rgb(95, 95, 95);
+    transition: all 0.5s;
+}
+
+.fa-facebook-square {
+    color: white;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-decoration:none;
+}
+
+.fa-facebook-square:hover {
+    background-color: rgb(95, 95, 95);
+    transition: all 0.5s;
+}
+
+.grupo-2 {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+/*FIN FOOTER*/
+
+
+
+
+
+/**********CONTACTO**********/
+
+/*FORMULARIO*/
+.color_F {
+    background-color: rgb(150, 251, 220);
+}
+
+.formulario {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.contactoColor {
+    text-decoration: underline;
+    padding-top: 6rem;
+}
+
+.letrasP {
+    font-weight: bolder;
+    padding-top: 2rem;
+}
+
+.form-control {
+    width: 60%;
+}
+
+.form-group {
+    font-weight:bold;
+}
+
+.nombre {
+    padding-top: 2rem;
+}
+
+.mensaje-2 {
+    padding-top: 2rem;
+}
+
+.mensaje {
+    padding: 3rem;
+}
+
+.enviar {
+    background-color: grey;
+    border-color:  grey;
+    margin-top: 0.5rem;
+    margin-bottom: 3rem;
+}
+/*FIN FORMULARIO*/
+
+
