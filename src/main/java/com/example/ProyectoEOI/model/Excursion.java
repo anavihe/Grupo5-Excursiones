@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -26,8 +27,8 @@ public class Excursion {
     private String informacion;
     private String detalles;
     @OneToMany (mappedBy = "excursion")
-    private Set<Opinion> opiniones;
+    private List<Opinion> opiniones;
     @OneToMany (mappedBy = "excursion")
-    private Set<Foto>fotos;
+    private List<Foto>fotos;
 
 }

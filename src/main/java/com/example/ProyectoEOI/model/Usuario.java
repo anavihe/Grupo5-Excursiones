@@ -35,9 +35,6 @@ public class Usuario {
     @OneToOne
     private Foto foto;
 
-    @OneToMany (mappedBy = "usuario")
-    private Set<MedioPago> medioPagos;
-
     @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
     private Set<Reserva> reservas;
 

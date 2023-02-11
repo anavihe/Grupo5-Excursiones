@@ -1,0 +1,5 @@
+INSERT INTO `db_proyecto_eoi`.`excursion` (`detalles`, `duracion`, `informacion`, `itinerario`, `max_personas`, `nombre`) VALUES ('Detalle excursión 1', '4', 'Info excursión 1', 'Itinerario 1', '10', 'Excursión 1');
+INSERT INTO `db_proyecto_eoi`.`excursion` (`detalles`, `duracion`, `informacion`, `itinerario`, `max_personas`, `nombre`) VALUES ('Detalle excursión 2', '5', 'Info excursión 2', 'Itinerario 2', '12', 'Excursión 2');
+INSERT INTO `db_proyecto_eoi`.`excursion` (`detalles`, `duracion`, `informacion`, `itinerario`, `max_personas`, `nombre`) VALUES ('Detalle excursión 3', '6', 'Info excursión 3', 'Itinerario 3', '15', 'Excursión 3');
+INSERT INTO `db_proyecto_eoi`.`excursion` (`detalles`, `duracion`, `informacion`, `itinerario`, `max_personas`, `nombre`) VALUES ('Detalle excursión 4', '4', 'Info excursión 4', 'Itinerario 4', '5', 'Excursión 4');
+INSERT INTO `db_proyecto_eoi`.`excursion` (`detalles`, `duracion`, `informacion`, `itinerario`, `max_personas`, `nombre`) VALUES ('Detalle excursión 5', '8', 'Info excursión 5', 'Itinerario 5', '10', 'Excursión 5');

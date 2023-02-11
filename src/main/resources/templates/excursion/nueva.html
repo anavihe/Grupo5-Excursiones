@@ -20,7 +20,7 @@
 <section>
   <div class="mg-5 container">
     <div class="d-flex justify-content-center align-items-center " style="height: 100vh;">
-      <form class="row g-3 m-auto" style="max-width: 500px; margin: 0 auto;" th:action="@{/excursion}" th:object="${datosExcursion}" method="post">
+      <form class="row g-3 m-auto" style="max-width: 500px; margin: 0 auto;" th:action="@{/excursion}" th:object="${datosExcursion}" method="post" enctype="multipart/form-data">
         <div class="col-12" id="header">
           <h1 class="text-center">¡Vamos a crear una excursion!</h1>
         </div>
@@ -54,6 +54,11 @@
         <div class="col-md-6">
           <label for="inputDescuento" class="form-label">Descuento</label>
           <input type="number" class="form-control" id="inputDescuento" th:field="${datosExcursion.descuento}" />
+        </div>
+
+        <div>
+          <label>Foto: </label>
+          <input type="file" name="imagen" accept="image/png, image/jpeg" />
         </div>
 
         <div class="col-12" id="divSubmit">

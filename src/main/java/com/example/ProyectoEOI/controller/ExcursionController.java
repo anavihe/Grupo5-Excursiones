@@ -3,13 +3,17 @@ package com.example.ProyectoEOI.controller;
 import com.example.ProyectoEOI.dto.ExcursionDTO;
 import com.example.ProyectoEOI.dto.UsuarioDTO;
 import com.example.ProyectoEOI.exceptions.ExcursionException;
+import com.example.ProyectoEOI.model.Excursion;
+import com.example.ProyectoEOI.model.Foto;
 import com.example.ProyectoEOI.service.ExcursionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +44,6 @@ public class ExcursionController {
         Page<ExcursionDTO> excursiones = this.service.buscarExcursiones(PageRequest.of(pagina, elementos));
         interfaz.addAttribute("pageNumber", numeroPaginas(excursiones));
         interfaz.addAttribute("lista", excursiones);
-
         return "excursion/lista";
     }
 
@@ -59,8 +62,15 @@ public class ExcursionController {
     }
 
     @PostMapping(value = "/excursion")
-    public String crearExcursion(ExcursionDTO excursion) {
+    public String crearExcursion(ExcursionDTO excursion, @RequestParam("imagen") MultipartFile multipartFile) {
         ExcursionDTO nuevaExcursion = this.service.crearExcursion(excursion);
+        // cargamos la foto
+        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+        Foto foto =new Foto();
+        foto.setDescripcion("Descripción dela foto");
+
+
+        nuevaExcursion.getFotos().add(foto);
         Long idExcursion = excursion.getId();
         return "redirect:/excursion/%s".formatted(idExcursion);
 

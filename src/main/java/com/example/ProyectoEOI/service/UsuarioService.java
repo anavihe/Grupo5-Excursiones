@@ -18,7 +18,6 @@ public class UsuarioService {
     private final UsuarioRepository repository;
     private final UsuarioMapper mapper;
 
-    @Autowired
     public UsuarioService(UsuarioRepository repository, UsuarioMapper mapper) {
         this.repository = repository;
         this.mapper = mapper;

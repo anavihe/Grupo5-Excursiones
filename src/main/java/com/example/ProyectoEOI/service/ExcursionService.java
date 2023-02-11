@@ -10,6 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -62,5 +63,10 @@ public class ExcursionService {
         }
 
         return optionalExcursion.get();
+    }
+
+    public List<Excursion> listarExcursiones() {
+        List<Excursion> lista = this.repository.findAll();
+        return lista;
     }
 }
