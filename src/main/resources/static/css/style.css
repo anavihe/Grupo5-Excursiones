@@ -336,19 +336,19 @@ hr {
 
 
 .detalles-menu-viaje{
-    margin-left: 3rem;
+    margin-right: 2rem;
     color: black;
     border: 1px solid black;
     border-radius: 30px;
     width: 10rem;
     text-align: center;
+    background-color: rgb(246, 239, 239);
 }
-
-
 
 
 .info_viaje {
     margin-top: 4rem;
+    margin-bottom: 8rem;
 }
 
 .titulo_incluido {
@@ -378,7 +378,8 @@ hr {
 
 /*DETALLES*/
 .detalles-viaje {
-    margin: 8rem 0;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
 }
 /*FIN DETALLES*/
 
@@ -475,6 +476,17 @@ hr {
     padding-left: 8rem;
 }
 /*FIN CALENDARIO*/
+
+
+/*CANCELACION*/
+.cancelacion2 {
+    margin-bottom: 5rem;
+}
+
+.cancelacion {
+    margin-bottom: 1rem;
+}
+/*FIN CANCELACION*/
 /*FIN viaje_informacion.html*/
 
 
