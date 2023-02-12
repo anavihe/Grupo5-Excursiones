@@ -377,10 +377,22 @@ hr {
 
 
 /*DETALLES*/
-.detalles-viaje {
+.detalles_y_calendario {
     margin-top: 8rem;
     margin-bottom: 8rem;
 }
+
+
+.detalles_viaje {
+    margin-top: 3.5rem;
+}
+
+
+.detalles {
+    border: 0.5px solid #b9d1e9;
+    padding: 1rem;
+}
+
 /*FIN DETALLES*/
 
 
