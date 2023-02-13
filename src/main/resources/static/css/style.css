@@ -376,16 +376,29 @@ hr {
 }
 
 
+
+/*ITINERARIO*/
+.borde_itinerario {
+    width: 60%;
+}
+
+.itinerario {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+
+.color_itinerario{
+    background-color: #e0edf9;
+}
+/*FIN ITINERARIO*/
+
 /*DETALLES*/
 .detalles_y_calendario {
     margin-top: 8rem;
     margin-bottom: 8rem;
 }
 
-
-.detalles_viaje {
-    margin-top: 3.5rem;
-}
 
 
 .detalles {
