@@ -517,7 +517,7 @@ hr {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10rem;
+  margin-top: 4rem;
   border: 2px solid #b9d1e9;
 }
 
@@ -540,6 +540,7 @@ hr {
 .boton_pagar {
     padding: 1rem;
     font-size: 22px;
+    margin-bottom: 5rem;
 }
 /*FIN pasarelaDePago.html*/
 

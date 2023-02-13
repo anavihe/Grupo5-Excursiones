@@ -11,6 +11,32 @@
 </head>
 <body>
 
+<!--HEADER-->
+<header>
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand titulo" href="index.html">BeProw</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item my-link mx-2">
+                        <a class="nav-link" href="contacto.html">Ayuda</a>
+                    </li>
+                    <li class="nav-item my-link mx-2">
+                        <a class="nav-link" href="login.html">Iniciar sesión</a>
+                    </li>
+                    <li class="nav-item my-link mx-2">
+                        <a class="nav-link" href="#">Registrarse</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--FIN HEADER-->
 
 <!--HOME-->
 <div class="row";>
@@ -19,7 +45,8 @@
 
     <div class="col-4 col-sm-4 col-md-4">
         <div id="mensaje" class="alert alert-success mt-5 " role="alert">
-            Pago aceptado. ¡Muchas gracias por su compra!
+            <p>PAGO ACEPTADO. ¡GRACIAS POR SU COMPRA!</p>
+            <p>La reserva ha sido confirmada. Puede ver los datos de su reserva en su Perfil de Usuario.</p>
         </div>
 
         <form action="/pasarela" class="form-container1" method="POST">
@@ -41,6 +68,7 @@
     </div>
 </div>
 <!--FIN HOME-->
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
