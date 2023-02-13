@@ -50,8 +50,8 @@ public class ExcursionController {
     @GetMapping(value = "/excursion/{id}")
     public String buscarExcursionPorId(@PathVariable Long id, ModelMap interfaz) throws ExcursionException {
         ExcursionDTO excursion = this.service.buscarExcursionPorId(id);
-        interfaz.addAttribute("datosExcursion", excursion);
-        return "excursion/detalle";
+        interfaz.addAttribute("excursion", excursion);
+        return "viaje_informacion";
     }
 
     @GetMapping(value = "/excursion")

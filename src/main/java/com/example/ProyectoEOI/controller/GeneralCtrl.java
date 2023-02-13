@@ -25,7 +25,7 @@ public class GeneralCtrl {
     @GetMapping("")  // esto es la ruta raiz de la ruta indicada en el @RequestMapping
     public String paginaInicio(ModelMap modMap) {
         List<Excursion> listaExcursiones = this.srvc.listarExcursiones();
-        modMap.addAttribute("listaExcur", listaExcursiones.subList(0,3));
+        modMap.addAttribute("excursiones", listaExcursiones.subList(0,1));
         return "index.html";
     }
 }

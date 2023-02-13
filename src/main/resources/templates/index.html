@@ -41,10 +41,10 @@
                         <a class="nav-link" href="contacto.html">Ayuda</a>
                     </li>
                     <li class="nav-item my-link mx-2">
-                        <a class="nav-link" href="login.html">Iniciar sesión</a>
+                        <a class="nav-link" href="/login">Iniciar sesión</a>
                     </li>
                     <li class="nav-item my-link mx-2">
-                        <a class="nav-link" href="#">Registrarse</a>
+                        <a class="nav-link" href="/registro">Registrarse</a>
                     </li>
                 </ul>
             </div>
@@ -88,20 +88,20 @@
 
     <!--CARGO LOS VIAJES DESDE EL OBJETO listaExcur   -->
 
-    <div class="details" th:each="excur : ${listaExcur}">
+    <div class="details" th:each="excursion : ${excursiones}">
         <div class="row">
             <div class="col-4 col-sm-4 col-md-4">
                 <div>
-                    <img src="../static/img/java2.jpg" alt="imagen de Java" class="java">
+                    <img th:src="@{/static/img/java2.jpg}" alt="imagen de Java" class="java">
                 </div>
             </div>
 
             <div class="col-8 col-sm-8 col-md-8">
-                <h4  th:text="${excur.nombre}" class="título"><b><u>VIAJE A LA ISLA DE JAVA</u></b></h4>
+                <a class="título" th:text="${excursion.nombre}" />
                 <p><b>En este viaje tendremos la oportunidad de recorrer la Isla de Java, en Indonesia.
                     Será un viaje lleno de aventuras, naturaleza, y actividades variadas. </b></p>
                 <p class="precio">PRECIO: 1390€</p>
-                <a href="..." class="btn btn-primary saber-mas">Saber más</a>
+                <a href="/excursion/${excursion.id}" class="btn btn-primary saber-mas">Saber más</a>
             </div>
         </div>
     </div>

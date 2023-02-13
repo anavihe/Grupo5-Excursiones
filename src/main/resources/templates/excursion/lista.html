@@ -27,7 +27,6 @@
                 </tr>
                 <tr th:each="excursion, posicion : ${lista.getContent()}">
                     <td th:text="${excursion.nombre}"></td>
-                    <td th:text="${excursion.descripcion}"></td>
                     <td th:text="${excursion.duracion}"></td>
                     <td th:text="${excursion.maxPersonas}"></td>
                     <td th:text="${excursion.dificultad}"></td>
