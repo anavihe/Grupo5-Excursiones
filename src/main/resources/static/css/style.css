@@ -342,7 +342,7 @@ hr {
     border-radius: 30px;
     width: 10rem;
     text-align: center;
-    background-color: rgb(246, 239, 239);
+    background-color: rgb(221, 235, 249);
 }
 
 
@@ -378,10 +378,6 @@ hr {
 
 
 /*ITINERARIO*/
-.borde_itinerario {
-    width: 60%;
-}
-
 .itinerario {
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
