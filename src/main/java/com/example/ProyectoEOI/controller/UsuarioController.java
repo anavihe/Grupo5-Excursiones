@@ -42,7 +42,7 @@ public class UsuarioController {
     public String logingUsusario(UsuarioDTO usuario) throws UsuarioException {
         usuario = this.usuarioService.login(usuario);
         Long id = usuario.getId();
-        return "redirect:/usuario/%s".formatted(id);
+        return "redirect:/reserva/lista/%s".formatted(id);
     }
 
     @GetMapping("/registro")

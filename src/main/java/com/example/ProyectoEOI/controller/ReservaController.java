@@ -3,45 +3,64 @@ package com.example.ProyectoEOI.controller;
 import com.example.ProyectoEOI.dto.ReservaDTO;
 import com.example.ProyectoEOI.dto.UsuarioDTO;
 import com.example.ProyectoEOI.exceptions.ReservaException;
+import com.example.ProyectoEOI.exceptions.UsuarioException;
 import com.example.ProyectoEOI.service.ReservaService;
+import com.example.ProyectoEOI.service.UsuarioService;
+import com.example.ProyectoEOI.util.ListarProducto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
+@SessionAttributes("reservas")
 @Controller
 public class ReservaController {
+    @ModelAttribute("reservas")
+    public ListarProducto listarProducto(){
+        return new ListarProducto();
+    }
 
     // TODO: Añadir el control de errores en pagina
 
     private final ReservaService service;
+    private final UsuarioService usuarioService;
 
     @Autowired
-    public ReservaController(ReservaService service) {
+    public ReservaController(ReservaService service, UsuarioService usuarioService) {
         this.service = service;
+        this.usuarioService = usuarioService;
     }
-    @GetMapping("/reserva/lista")
+    @GetMapping("/reserva/lista/{id}")
     public String verReservasCliente(
+            @PathVariable("id")Integer idUsuario,
             @RequestParam("page")Optional<Integer> page,
             @RequestParam("size") Optional<Integer> size,
-            ModelMap interfaz) {
+            ModelMap interfaz, RedirectAttributes attributes) throws UsuarioException {
+
+        //Vamos a introducir el usuario en la sesión
+
+        ListarProducto listarProducto = (ListarProducto) attributes.getFlashAttributes().get("reservas");
+        listarProducto.setIdUsuario(Long.valueOf(idUsuario));
+        attributes.addAttribute("reservas",listarProducto);
+
+
 
         Integer pagina = page.map(integer -> integer - 1).orElse(0);
         Integer elementos = size.orElse(10);
-        UsuarioDTO usuario = (UsuarioDTO) interfaz.getAttribute("datosUsuario");
+        UsuarioDTO usuario = usuarioService.buscarUsuarioPorId(Long.valueOf(idUsuario));
         Page<ReservaDTO> reserva = this.service.buscarReservaUsuario(usuario, PageRequest.of(pagina, elementos));
 
         interfaz.addAttribute("pageNumber", numeroPaginas(reserva));
         interfaz.addAttribute("lista", reserva);
-        interfaz.addAttribute("idUsuario", usuario.getId());
+
         //Ofrecer opciones de detalles, Cancelar
         return "reserva/lisareservasusuario";
     }
@@ -49,6 +68,8 @@ public class ReservaController {
     public String verReservas(
             @RequestParam("page")Optional<Integer> page,
             @RequestParam("size") Optional<Integer> size,
+            @RequestParam("idUsuario")Optional<Integer> usuario,
+
             ModelMap interfaz) {
 
         Integer pagina = page.map(integer -> integer - 1).orElse(0);
@@ -58,7 +79,6 @@ public class ReservaController {
 
         interfaz.addAttribute("pageNumber", numeroPaginas(reserva));
         interfaz.addAttribute("lista", reserva);
-        interfaz.addAttribute("idusuario", usuario.getId());
         //Ofrecer opciones de detalles, Comprar
         return "reserva/lista";
     }
