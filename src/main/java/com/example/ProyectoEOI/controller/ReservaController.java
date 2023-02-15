@@ -46,9 +46,14 @@ public class ReservaController {
             ModelMap interfaz, RedirectAttributes attributes) throws UsuarioException {
 
         //Vamos a introducir el usuario en la sesión
+        ListarProducto listarProducto = new ListarProducto();
+        if(attributes.getFlashAttributes().isEmpty()) {
+            listarProducto.setIdUsuario(Long.valueOf(idUsuario));
+        }else {
+            listarProducto = (ListarProducto) attributes.getFlashAttributes().get("reservas");
+            listarProducto.setIdUsuario(Long.valueOf(idUsuario));
+        }
 
-        ListarProducto listarProducto = (ListarProducto) attributes.getFlashAttributes().get("reservas");
-        listarProducto.setIdUsuario(Long.valueOf(idUsuario));
         attributes.addAttribute("reservas",listarProducto);
 
 

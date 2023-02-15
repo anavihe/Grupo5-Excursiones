@@ -48,7 +48,8 @@
 <h3 class="titulo_reservas">MIS RESERVAS:</h3>
 <div class="container">
     <div class="row" th:if="${reservaList!=null and !reservaList.empty}">
-        <input th:type="hidden" th:field="${idUsuario}">
+
+        <a th:href="@{/reservas/crear">Contratar nuevo viaje</a>
         <table class="table table-bordered table-hover">
             <tr>
                 <th>Nombre</th>
@@ -160,4 +161,4 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 </body>
-</>
+</html>
