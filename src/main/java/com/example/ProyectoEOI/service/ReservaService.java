@@ -33,6 +33,10 @@ public class ReservaService {
     public List<Reserva> buscarReservaUsuarioPerfil(Long id) {
         return this.repository.findByUsuarioId(id);
     }
+    public Page<ReservaDTO> buscarReservas (Pageable pageable) {
+        return this.repository.findAll(pageable).map(this.mapper::entityToDto);}
+
+
     public ReservaDTO crearReserva (ReservaDTO reservaDto) {
         Reserva reserva = this.mapper.dtoToEntity(reservaDto);
         reserva = this.repository.save(reserva);

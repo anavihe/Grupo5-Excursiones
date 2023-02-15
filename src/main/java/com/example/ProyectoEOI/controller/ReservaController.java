@@ -66,16 +66,18 @@ public class ReservaController {
     }
     @GetMapping("/reserva/crear")
     public String verReservas(
+
             @RequestParam("page")Optional<Integer> page,
             @RequestParam("size") Optional<Integer> size,
-            @RequestParam("idUsuario")Optional<Integer> usuario,
 
-            ModelMap interfaz) {
+            ModelMap interfaz, RedirectAttributes attributes) {
+
+        ListarProducto listarProducto = (ListarProducto) attributes.getFlashAttributes().get("reservas");
+
 
         Integer pagina = page.map(integer -> integer - 1).orElse(0);
         Integer elementos = size.orElse(10);
-        UsuarioDTO usuario = (UsuarioDTO) interfaz.getAttribute("datosUsuario");
-        Page<ReservaDTO> reserva = this.service.buscarReservaUsuario(usuario, PageRequest.of(pagina, elementos));
+        Page<ReservaDTO> reserva = this.service.buscarReservas(PageRequest.of(pagina, elementos));
 
         interfaz.addAttribute("pageNumber", numeroPaginas(reserva));
         interfaz.addAttribute("lista", reserva);
