@@ -20,10 +20,4 @@ public class ExcursionDTO {
     private String duracion;
     private Integer maxPersonas;
     private Dificultad dificultad;
-    private Double puntuacionMedia;
-    private Integer puntuaciones;
-    private Double precio;
-    private Double descuento;
-    private LocalDate fechaAlta;
-    private LocalDate fechaModificacion;
 }

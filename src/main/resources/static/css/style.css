@@ -336,19 +336,19 @@ hr {
 
 
 .detalles-menu-viaje{
-    margin-left: 3rem;
+    margin-right: 2rem;
     color: black;
     border: 1px solid black;
     border-radius: 30px;
     width: 10rem;
     text-align: center;
+    background-color: rgb(221, 235, 249);
 }
-
-
 
 
 .info_viaje {
     margin-top: 4rem;
+    margin-bottom: 8rem;
 }
 
 .titulo_incluido {
@@ -376,10 +376,32 @@ hr {
 }
 
 
-/*DETALLES*/
-.detalles-viaje {
-    margin: 8rem 0;
+
+/*ITINERARIO*/
+.itinerario {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
 }
+
+
+.color_itinerario{
+    background-color: #e0edf9;
+}
+/*FIN ITINERARIO*/
+
+/*DETALLES*/
+.detalles_y_calendario {
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+}
+
+
+
+.detalles {
+    border: 0.5px solid #b9d1e9;
+    padding: 1rem;
+}
+
 /*FIN DETALLES*/
 
 
@@ -475,6 +497,17 @@ hr {
     padding-left: 8rem;
 }
 /*FIN CALENDARIO*/
+
+
+/*CANCELACION*/
+.cancelacion2 {
+    margin-bottom: 5rem;
+}
+
+.cancelacion {
+    margin-bottom: 1rem;
+}
+/*FIN CANCELACION*/
 /*FIN viaje_informacion.html*/
 
 
@@ -484,7 +517,7 @@ hr {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10rem;
+  margin-top: 4rem;
   border: 2px solid #b9d1e9;
 }
 
@@ -507,6 +540,7 @@ hr {
 .boton_pagar {
     padding: 1rem;
     font-size: 22px;
+    margin-bottom: 5rem;
 }
 /*FIN pasarelaDePago.html*/
 
@@ -547,3 +581,22 @@ hr {
     border-color: black;
 }
 /*FIN login.html*/
+
+/*cancelar_reserva.html*/
+.cancelacion_reserva {
+    margin-bottom: 5rem;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+    width: 120%;
+}
+
+
+.boton_pagar2 {
+    padding: 0.8rem;
+    width: 40%;
+    font-size: 20px;
+    margin-left: 9rem;
+    margin-top: 1.5rem;
+}
+
+/*FIN cancelar_reserva.html*/

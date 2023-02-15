@@ -18,6 +18,7 @@ public class UsuarioMapper extends AbstractMapper<Usuario, UsuarioDTO> {
                 .email(usuario.getEmail())
                 .fechaInsert(usuario.getFechaInsert())
                 .fechaAct(usuario.getFechaAct())
+                .password(usuario.getPassword())
                 .build();
     }
 

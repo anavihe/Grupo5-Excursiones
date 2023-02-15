@@ -20,21 +20,13 @@ public class Excursion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    private String descripcion;
     private String duracion;
     private Integer maxPersonas;
-    @Enumerated(EnumType.STRING)
-    private Dificultad dificultad;
-    private Double puntuacionMedia;
-    private Integer puntuaciones;
-    private Double precio;
-    private Double descuento;
-    private LocalDate fechaAlta;
-    private LocalDate fechaModificacion;
-
+    private String itinerario;
+    private String informacion;
+    private String detalles;
     @OneToMany (mappedBy = "excursion")
     private Set<Opinion> opiniones;
-
     @OneToMany (mappedBy = "excursion")
     private Set<Foto>fotos;
 

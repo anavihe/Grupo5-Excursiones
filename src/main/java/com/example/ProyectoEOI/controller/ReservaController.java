@@ -28,8 +28,24 @@ public class ReservaController {
     public ReservaController(ReservaService service) {
         this.service = service;
     }
+    @GetMapping("/reserva/lista")
+    public String verReservasCliente(
+            @RequestParam("page")Optional<Integer> page,
+            @RequestParam("size") Optional<Integer> size,
+            ModelMap interfaz) {
 
-    @GetMapping("/reservas")
+        Integer pagina = page.map(integer -> integer - 1).orElse(0);
+        Integer elementos = size.orElse(10);
+        UsuarioDTO usuario = (UsuarioDTO) interfaz.getAttribute("datosUsuario");
+        Page<ReservaDTO> reserva = this.service.buscarReservaUsuario(usuario, PageRequest.of(pagina, elementos));
+
+        interfaz.addAttribute("pageNumber", numeroPaginas(reserva));
+        interfaz.addAttribute("lista", reserva);
+        interfaz.addAttribute("idUsuario", usuario.getId());
+        //Ofrecer opciones de detalles, Cancelar
+        return "reserva/lisareservasusuario";
+    }
+    @GetMapping("/reserva/crear")
     public String verReservas(
             @RequestParam("page")Optional<Integer> page,
             @RequestParam("size") Optional<Integer> size,
@@ -42,6 +58,8 @@ public class ReservaController {
 
         interfaz.addAttribute("pageNumber", numeroPaginas(reserva));
         interfaz.addAttribute("lista", reserva);
+        interfaz.addAttribute("idusuario", usuario.getId());
+        //Ofrecer opciones de detalles, Comprar
         return "reserva/lista";
     }
 
@@ -55,12 +73,7 @@ public class ReservaController {
         }
         return pageNumbers;
     }
-    @GetMapping(value = "/reserva/{id}")
-    public String buscarResevaPorId(@PathVariable Long id, ModelMap interfaz) throws ReservaException {
-        ReservaDTO reserva = this.service.buscarReservaPorId(id);
-        interfaz.addAttribute("datosReserva", reserva);
-        return "reserva/detalle";
-    }
+
 
     @GetMapping(value = "/reserva")
     public String nuevaReserva(ModelMap interfaz) {
@@ -77,6 +90,12 @@ public class ReservaController {
 
     }
 
+    @GetMapping(value = "/reserva/{id}")
+    public String buscarResevaPorId(@PathVariable Long id, ModelMap interfaz) throws ReservaException {
+        ReservaDTO reserva = this.service.buscarReservaPorId(id);
+        interfaz.addAttribute("datosReserva", reserva);
+        return "reserva/detalle";
+    }
     @PutMapping(value = "/reserva/{id}")
     public String modificarReserva (@PathVariable Long id, ReservaDTO reserva) throws ReservaException {
         reserva = this.service.modificarReserva(reserva, id);

@@ -11,6 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -29,6 +30,9 @@ public class ReservaService {
         return this.repository.findByUsuarioId(usuarioDTO.getId(), pageable).map(this.mapper::entityToDto);
     }
 
+    public List<Reserva> buscarReservaUsuarioPerfil(Long id) {
+        return this.repository.findByUsuarioId(id);
+    }
     public ReservaDTO crearReserva (ReservaDTO reservaDto) {
         Reserva reserva = this.mapper.dtoToEntity(reservaDto);
         reserva = this.repository.save(reserva);
